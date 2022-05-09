@@ -77,7 +77,7 @@ function Section()
   return(
     <section className="full-container">
       
-        <div className="contents">
+        <div className="full-contents">
           <div className="slider">
             <div className="img-box">
               <img src="/images/slide1.jpg" alt="슬라이드1" />
@@ -99,18 +99,36 @@ function Section()
       
         <div className="contents store">
           <div className="in-container">
-            <h2>신규 대리점 소개</h2>
-            <div className="img-box">
-              <img src="/images/경주.jpg" alt="경주점"/>
+            <h2 className="tit">신규 대리점 소개</h2>
+            <div className="btn-box">
+              <div className="btn next">next</div>
+              <div className="btn prev">prev</div>
             </div>
-            <div className="info">
-              <p><strong>오티콘보청기 경주점</strong></p>
-              <address>
-                경북 경주시 안강읍 안강시장길 15(양월리)
-              </address>
-              <p className="tel">
-                054-761-2555
-              </p>
+            <div className="store-contents">
+              <div className="img-box">
+                <a href="#">
+                <img src="/images/경주.jpg" alt="경주점"/>
+                </a>
+              </div>
+              
+                <div className='info-container'>
+                <a href="#" className='info'>
+                  <p><strong>오티콘보청기 경주점</strong></p>
+                  <address>
+                    경북 경주시 안강읍 안강시장길 15(양월리)
+                  </address>
+                  <p className="tel">
+                    054-761-2555
+                  </p>
+                </a>
+                  <a href="#">
+                    <div className="btn-more">
+                      자세히 보기
+                    </div>
+                  </a>
+                </div>
+              
+              
             </div>
           </div>
           
