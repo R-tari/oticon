@@ -37,6 +37,8 @@ img
 {
   max-width:1300px;
   margin:0 auto;
+  display:grid;
+  grid-template-columns: 918px 320px;
 }
 .header>.out-container
 {
@@ -161,6 +163,7 @@ img
 
 .store
 {
+  margin:0px 15px 30px 15px;
   border:1px solid #ddd;
   width:290px;
   height:220px;
@@ -188,6 +191,7 @@ img
   height:20px;
   border-radius: 50%;
   text-indent:-9999px;
+  margin-right:5px;
 
 }
 .next::after 
@@ -202,6 +206,7 @@ img
   border-top:2px solid rgb(255, 255, 255);
   border-right: 2px solid rgb(255, 255, 255);
   transform: rotate(225deg);
+  
  
 }
 
@@ -213,6 +218,7 @@ img
   height:20px;
   border-radius: 50%;
   text-indent:-9999px;
+ 
 
 }
 .prev::after 
