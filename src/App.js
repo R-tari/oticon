@@ -160,6 +160,16 @@ export const Store_Date=
   
 ]
 
+export const Search_Store=
+[
+  {
+    id:'1',
+    tit:'오티콘 대리점 매장찾기',
+    src:'/images/map.png',
+    txt:'전국 오티콘 코리아 매장을<br>쉽게 찾으실 수 있습니다.',
+  }
+]
+
 
 
 
@@ -278,7 +288,7 @@ function Section()
           <button className="btn3">3</button>
         </div>
       
-        <div className="contents store">
+        <article className="contents store">
           <div className="in-container">
             <h2 className="tit">신규 대리점 소개</h2>
             <div className="btn-box">
@@ -351,7 +361,26 @@ function Section()
           </div>
           
          
-        </div>
+        </article>
+        {Search_Store.map(SearchCon=>
+          {
+            return(
+              <article className="contents search">
+               
+                  <h2 className="tit">{SearchCon.tit}</h2>
+                      <a href="#" className='info'>
+                        <p>전국 오티콘 코리아 매장을<br/>쉽게 찾으실 수 있습니다.</p>
+                      </a>
+                      <a href="#">
+                        <div className="btn-more">
+                          자세히 보기
+                        </div>
+                      </a>
+                
+              </article>
+            )
+          })}
+        
 
       
 
@@ -363,7 +392,7 @@ function Section()
    
 function card()
 {
-  <div className="contents store">
+  <article className="contents store">
     <div className="in-container">
       <h2 className="tit">신규 대리점 소개</h2>
       <div className="btn-box">
@@ -398,7 +427,7 @@ function card()
       </div>
     </div>
           
-  </div>
+  </article>
 }
 
 
