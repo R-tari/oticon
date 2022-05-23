@@ -168,6 +168,7 @@ img
   width:290px;
   height:220px;
   padding:20px 19px 15px 25px;
+  overflow:hidden;
 }
 
 .store .in-container
@@ -261,6 +262,7 @@ img
 {
   display:flex;
   flex-flow:row nowrap;
+  width:100%;
  
 }
 .store .in-container .img-box
@@ -296,20 +298,9 @@ img
 {
   margin-top:15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.store-container
+{
+  display:flex;
+  flex-flow:row nowrap;
+  width:1000%;
+}
