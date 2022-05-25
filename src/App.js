@@ -237,6 +237,30 @@ export const News=
   },
 ]
 
+export const FooterList=
+[
+  {
+    id:1,
+    href:'#',
+    txt:'본사직영점'
+  },
+  {
+    id:2,
+    href:'#',
+    txt:'이메일무단수집거부'
+  },
+  {
+    id:3,
+    href:'#',
+    txt:'이용약관'
+  },
+  {
+    id:4,
+    href:'#',
+    txt:'개인정보취급방침'
+  },
+]
+
 
 
 function Header()
@@ -507,6 +531,12 @@ function Section()
         <article className="news">
           <div className="in-container">
             <h2 className='tit'>오티콘 뉴스</h2>
+            <a href="#">           
+            <div className="btn-plus">
+              <img src="/images/btn_plus.png" alt="news 상세페이지 버튼" />
+            </div>
+            </a>
+
             <a href="#">
             <div className="news-content">
               <div className="img-box">
@@ -551,46 +581,43 @@ function Section()
   )
 }
    
-function card()
+function Footer()
 {
-  <article className="contents store">
-    <div className="in-container">
-      <h2 className="tit">신규 대리점 소개</h2>
-      <div className="btn-box">
-        <div className="btn next">next</div>
-        <div className="btn prev">prev</div>
-      </div>
-      <div className="store-contents">
-        <div className="img-box">
-          <a href="#">
-          <img src="/images/경주.jpg" alt="경주점"/>
-          </a>
-        </div>
-        
-          <div className='info-container'>
-          <a href="#" className='info'>
-            <p><strong>오티콘보청기 경주점</strong></p>
-            <address>
-              경북 경주시 안강읍 안강시장길 15(양월리)
-            </address>
-            <p className="tel">
-              054-761-2555
-            </p>
-          </a>
-            <a href="#">
-              <div className="btn-more">
-                자세히 보기
-              </div>
-            </a>
+  return(
+    <footer className="footer">
+      <div className="full-container">
+        <div className="footer-top">
+          <ul>
+          {FooterList.map(Footerlist=>
+            {
+              return(
+                    <a href={Footerlist.href}>
+                      <li>{Footerlist.txt}</li>
+                    </a>
+              )
+            })}
+            </ul>
           </div>
-        
-        
+        <div className="footer-bottom">
+          <div className="img-box">
+            <img src="/images/f_logo.png" alt="footer로고" />
+          </div>
+          <div className="txt-box">
+          <address>
+            서울시 중구 서소문로 99 서영빌딩 7층~3층
+          </address>
+          <p className="tel">
+            <span>사업자등록번호:104-86-24123</span> <span>TEL:02-2022-3900</span> <span>Fax:02-2022-3939</span>
+          </p>
+          <p className="copyright">
+             OTICON KOREA. All Rights Reserved.
+          </p>
+          </div>
+        </div>
       </div>
-    </div>
-          
-  </article>
+    </footer>
+  )
 }
-
 
 function App()
 {
@@ -600,6 +627,7 @@ function App()
     <div className="wrap">
       <Header/>
       <Section/>
+      <Footer/>
     </div>
   )
 }
