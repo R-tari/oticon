@@ -29,7 +29,7 @@ img
 }
 .container
 {
-  max-width:1240px;
+  max-width:1300px;
   margin:0 auto;
   padding:0 30px;
 }
@@ -38,12 +38,13 @@ img
   max-width:1300px;
   margin:0 auto;
   display:grid;
-  grid-template-columns: 918px 320px;
+  grid-template-columns: 948px 320px;
   transform : rotate(0.07deg); 
 
 }
 .bottom-section
 {
+  margin:0 15px;
   height:280px;
   margin-bottom:30px;
   display:flex;
@@ -60,7 +61,7 @@ img
   flex-flow:row nowrap;
   justify-content: flex-end;;
   width:100%;
-  max-width:1240px;
+  max-width:1300px;
   margin:0 auto;
   padding:0 30px;
 }
@@ -70,9 +71,12 @@ img
   width:100px;
   display:flex;
   flex-flow:row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-
+.header .out-container .utill
+{
+  margin-right:5px;
+}
 
 .header .out-container .utill ul
 {
@@ -89,6 +93,7 @@ img
   margin-right:8px;
   color:#fff;
   font-size:12px;
+  font-weight:300;
 }
 
 .header .out-container .utill ul li:first-child
@@ -116,7 +121,7 @@ img
 
 .header .nav .container
 {
-  max-width:1240px;
+  max-width:1300px;
   margin:0 auto;
   padding:0 30px;
 }
@@ -126,8 +131,26 @@ img
 {
   display:flex;
   flex-flow:row nowrap;
+ 
   
 }
+.header .utill a
+{
+  line-height: 40px;
+}
+
+.header .test a
+{
+  display: inline-block;
+
+}
+
+.header .sns ul
+{
+  margin-top:7px;
+}
+
+
 .header .nav .container h1
 {
   display:inline-block;
@@ -143,29 +166,62 @@ img
   width:74.5%;
 }
 
-
-.full-contents
+.header .navigation
 {
-  width:918px;
-  overflow:hidden;
+  transform:rotate(0.08deg);
+  margin-left:19px;
+}
+.header .navigation li a
+{
+  line-height: 80px;
+  font-size:20px;
+  font-weight:400;
+  
+}
+
+.header h1
+{
+  flex:1 0 316px;
+}
+.header h1 a
+{
+  display:block;
+  margin-top:15px;
+}
+
+
+/* 슬라이더 스타일 */
+.slider-outcontainer
+{
+  margin:0 15px;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 3;
 }
+.full-contents
+{
+  
+  width:918px;
+  overflow:hidden;
+  
+}
 
 .full-contents .slider
 {
-  width:3672vw;
+  width:3672px;
+  
   transform:translateX(0px);
 }
 
 .full-contents .slider .img-box
 {
   width:918px;
-  height:auto;;
+  height:423px;
   float:left;
 }
+
+
 
 
 
@@ -174,6 +230,46 @@ img
  width:100%;
  
 }
+
+.btn-slide
+{
+  width:918px;
+  overflow:hidden;
+}
+.btn-slider
+{
+  width:1227px;
+  display:flex;
+  flex-flow:row nowrap;
+
+}
+.slide-btn
+{
+  background-color:#d5d5d5;
+  width:306px;
+  height:46px;
+  border:1px solid black;
+  text-align:center;
+  line-height: 46px;
+  cursor:pointer;
+}
+
+#btn-1
+{
+  background-color:#c60081;
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* card 스타일 */
 
@@ -563,4 +659,88 @@ article
 {
   background-color:#232731;
   color:#fff;
+  display:flex;
+  flex-flow:column nowrap;
 }
+.footer .full-container
+{
+  padding:0 30px;
+}
+
+.footer-top
+{
+  border-bottom:1px solid rgba(170,170,170,0.3);
+  padding:18px;
+}
+
+.footer ul
+{
+  display:flex;
+  flex-flow:row nowrap;
+  
+} 
+.footer ul a
+{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items:center;
+  
+}
+.footer ul li
+{
+  color:#fff;
+  font-weight:300;
+  line-height: 1.75em;
+}
+.footer ul a::after
+{
+  content:'';
+  display:block;
+  width:1px;
+  height:13px;
+  background-color: #fff;
+  margin:0 10px;
+}
+
+.footer ul a:last-child::after
+{
+  display:none;
+}
+
+.footer-bottom
+{
+  padding:40px 0;
+  color:#aaa;
+}
+
+.footer-bottom .full-container
+{
+  display:flex;
+  font-weight:300;
+}
+
+.footer-bottom .img-box
+{
+  margin-right:50px;
+}
+.footer-bottom .full-container .txt-box
+{
+  flex: 1 1 auto;
+  line-height:1.75em;
+}
+.footer-bottom .full-container .txt-box span
+{
+  margin-right:10px;
+}
+.footer .copyright
+{
+  display:inline-block;
+  padding-top:23px;
+}
+
+
+
+
+
+

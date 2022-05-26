@@ -23,6 +23,29 @@ export const DUMMY_SRC = [
   }
 ]
 
+export const Slide_Btn=
+[
+  {
+    id:'btn-1',
+    txt:'보청기가 필요할땐 오티콘'
+  },
+
+  {
+    id:'btn-2',
+    txt:'정부지원보청기'
+  },
+
+  {
+    id:'btn-3',
+    txt:'64채널 프리미엄 오티콘 모어(More)'
+  },
+
+  {
+    id:'btn-4',
+    txt:'(2021)올해의 브랜드 5년 연속 대상'
+  },
+]
+
 export const Dum_Date =
 [
   {
@@ -297,9 +320,9 @@ function Header()
                   {DUMMY_SRC.map(
                     (
                       list=>
-                        <list className='test' key={list.id}><a href={list.href}>
-                        <img src={list.src} alt='t'/>
-                        </a></list>
+                        <li className='test' key={list.id}><a href={list.href}>
+                          <img src={list.src} alt='t'/>
+                        </a></li>
                     )
                   )}
                 </ul>
@@ -314,7 +337,7 @@ function Header()
                     <img src="/images/logo.png" alt="logo"/>
                   </a>
               </h1>
-              <nav class="nav">
+              <nav class="navigation">
                   <ul>
                       {/* <li>
                           <a href="#">보청기제품</a>
@@ -355,7 +378,7 @@ function Section()
 {
   return(
     <section className="full-container">
-      
+      <div className="slider-outcontainer">
         <div className="full-contents">
           <div className="slider">
             <div className="img-box">
@@ -369,12 +392,20 @@ function Section()
             </div>
             <div className="img-box">
               <img src="/images/slide4.jpg" alt="슬라이드1" />
-            </div>np
+            </div>
           </div>
-          <button className="btn1">1</button>
-          <button className="btn2">2</button>
-          <button className="btn3">3</button>
         </div>
+        <div className="btn-slide">
+            <div className="btn-slider">
+              {Slide_Btn.map(SlideBtn=>
+                {
+                  return(<div className="slide-btn" id={SlideBtn.id}>
+                          <p>{SlideBtn.txt}</p>
+                        </div>)
+                })}
+            </div>
+          </div>
+      </div>
       
         <article className="contents store">
           <div className="in-container">
@@ -585,36 +616,42 @@ function Footer()
 {
   return(
     <footer className="footer">
-      <div className="full-container">
+      
         <div className="footer-top">
-          <ul>
-          {FooterList.map(Footerlist=>
-            {
-              return(
-                    <a href={Footerlist.href}>
-                      <li>{Footerlist.txt}</li>
-                    </a>
-              )
-            })}
+          <div className="full-container">
+            <ul>
+            {FooterList.map(Footerlist=>
+              {
+                return(
+                      <a href={Footerlist.href}>
+                        <li>{Footerlist.txt}</li>
+                      </a>
+                )
+              })}
             </ul>
           </div>
+        </div>
+         
         <div className="footer-bottom">
-          <div className="img-box">
-            <img src="/images/f_logo.png" alt="footer로고" />
-          </div>
-          <div className="txt-box">
-          <address>
-            서울시 중구 서소문로 99 서영빌딩 7층~3층
-          </address>
-          <p className="tel">
-            <span>사업자등록번호:104-86-24123</span> <span>TEL:02-2022-3900</span> <span>Fax:02-2022-3939</span>
-          </p>
-          <p className="copyright">
-             OTICON KOREA. All Rights Reserved.
-          </p>
+          <div className="full-container">
+            <div className="img-box">
+              <img src="/images/f_logo.png" alt="footer로고" />
+            </div>
+            <div className="txt-box">
+            <address>
+              서울시 중구 서소문로 99 서영빌딩 7층~3층
+            </address>
+            <p className="tel">
+              <span>사업자등록번호:104-86-24123</span> <span>TEL:02-2022-3900</span> <span>FAX:02-2022-3939</span>
+            </p>
+            
+            </div>
+            <p className="copyright">
+              OTICON KOREA. All Rights Reserved.
+            </p>
           </div>
         </div>
-      </div>
+      
     </footer>
   )
 }
