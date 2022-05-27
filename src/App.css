@@ -40,6 +40,7 @@ img
   display:grid;
   grid-template-columns: 948px 320px;
   transform : rotate(0.07deg); 
+  padding-top:15px;
 
 }
 .bottom-section
@@ -126,6 +127,10 @@ img
   padding:0 30px;
 }
 
+.header .nav
+{
+  background-color:#f4f4f4;
+}
 
 .header .nav .container,.header .nav .container ul
 {
@@ -186,7 +191,7 @@ img
 .header h1 a
 {
   display:block;
-  margin-top:15px;
+  margin-top:17px;
 }
 
 
@@ -421,6 +426,7 @@ article
 .store .in-container .btn-more
 {
   margin-top:15px;
+  margin-left:10px;
 }
 .store-container
 {
@@ -476,6 +482,8 @@ article
   padding-left:15px;
   margin:0 0 20px 0;
 }
+
+
 .product h2
 {
   font-size:18px;
@@ -502,7 +510,7 @@ article
 
 .product .img-box
 {
-  height:110px;
+  height:105px;
   margin:auto 0;
 }
 
@@ -540,9 +548,25 @@ article
 {
   padding:20px 12px 10px;
 }
+
+.product2 h2
+{
+  font-size:18px;
+}
 .product2 .in-container
 {
   position:relative;
+}
+.product2 .in-container .name
+{
+  margin-top:8px;
+}
+.product2 .in-container .name p
+{
+  width:105%;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
 }
 
 .product2 .item,.product2 .item .img-box
@@ -594,7 +618,7 @@ article
 
 .news h2
 {
-  margin-bottom:25px;
+  margin-bottom:18px;
 }
 
 .news .btn-plus
