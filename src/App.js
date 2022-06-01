@@ -1,6 +1,11 @@
 
-import React from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import './App.css';
+import Swiper from './swiper';
+
+
+
+
 
 export const DUMMY_SRC = [
   {
@@ -79,6 +84,148 @@ export const Dum_Date =
   },
 ]
 
+export const SubNav1=
+[
+  {
+    id:1,
+    href:'#',
+    subnav:'보청기'
+  },
+
+  {
+    id:2,
+    href:'#',
+    subnav:'정부지원보청기'
+  },
+
+  {
+    id:3,
+    href:'#',
+    subnav:'보청기 무선통신기기'
+  },
+
+  {
+    id:4,
+    href:'#',
+    subnav:'보청기 악세사리'
+  },
+
+  {
+    id:5,
+    href:'#',
+    subnav:'청력진단장비'
+  },
+
+  {
+    id:6,
+    href:'#',
+    subnav:'청취보조장비'
+  },
+
+  {
+    id:7,
+    href:'#',
+    subnav:'난청과 보청기란'
+  },
+
+  {
+    id:8,
+    href:'#',
+    subnav:'오티콘의 기술력'
+  },
+
+  {
+    id:9,
+    href:'#',
+    subnav:'오티콘의 철학'
+  }
+]
+
+export const SubNav2=
+[
+  {
+    id:1,
+    href:'#',
+    subnav:'대리점 안내'
+  }
+]
+
+export const SubNav3=
+[
+  {
+    id:1,
+    href:'#',
+    subnav:'공지사항'
+  },
+  {
+    id:2,
+    href:'#',
+    subnav:'이벤트'
+  },
+  {
+    id:3,
+    href:'#',
+    subnav:'홍보자료'
+  },
+  {
+    id:4,
+    href:'#',
+    subnav:'홍보영상'
+  },
+]
+
+export const SubNav4=
+[
+  {
+    id:1,
+    href:'#',
+    subnav:'1:1문의'
+  },
+  {
+    id:2,
+    href:'#',
+    subnav:'자주하는 질문'
+  },
+  {
+    id:3,
+    href:'#',
+    subnav:'고객소리함'
+  },
+]
+export const SubNav5=
+[
+  {
+    id:1,
+    href:'#',
+    subnav:'회사개요'
+  },
+  {
+    id:2,
+    href:'#',
+    subnav:'CEO인사말'
+  },
+  {
+    id:3,
+    href:'#',
+    subnav:'연혁'
+  },
+  {
+    id:4,
+    href:'#',
+    subnav:'CI소개'
+  },
+  {
+    id:5,
+    href:'#',
+    subnav:'계열사'
+  },
+  {
+    id:6,
+    href:'#',
+    subnav:'찾아오시는 길'
+  },
+]
+
 export const Store_Date=
 [
   {
@@ -87,7 +234,7 @@ export const Store_Date=
     src:'/images/경주.jpg',
     alt:'경주점',
     storeTit:'오티콘보청기 경주점',
-    address:'경북 경주시 안강읍 안강시장길(양월리)',
+    address:'경북 경주시 안강읍 안강시장길 15 (양월리)',
     tel:'054-761-2555',
   },
 
@@ -286,6 +433,9 @@ export const FooterList=
 
 
 
+
+
+
 function Header()
 {
   return(
@@ -339,21 +489,6 @@ function Header()
               </h1>
               <nav class="navigation">
                   <ul>
-                      {/* <li>
-                          <a href="#">보청기제품</a>
-                      </li>
-                      <li>
-                          <a href="#">대리점</a>
-                      </li>
-                      <li>
-                          <a href="#">미디어센터</a>
-                      </li>
-                      <li>
-                          <a href="#">고객센터</a>
-                      </li>
-                      <li>
-                          <a href="#">회사소개</a>
-                      </li> */}
                       {Dum_Date.map(nav=>
                       {
                         return(
@@ -365,9 +500,78 @@ function Header()
                         )
                       })
                     }
-                    
                   </ul>
               </nav>
+          </div>
+          <div className="subNav">
+            <div className="sub-outcontainer">
+              <div className="sub-incontainer">
+                <ul>
+                {SubNav1.map(sub1=>
+                  {
+                    return(
+                    <li>
+                      <a href={sub1.href}>
+                        {sub1.subnav}
+                      </a>
+                    </li>
+                    )
+                  })}
+                </ul>
+
+                <ul>
+                {SubNav2.map(sub2=>
+                  {
+                    return(
+                    <li>
+                      <a href={sub2.href}>
+                        {sub2.subnav}
+                      </a>
+                    </li>
+                    )
+                  })}
+                </ul>
+
+                <ul>
+                {SubNav3.map(sub3=>
+                  {
+                    return(
+                    <li>
+                      <a href={sub3.href}>
+                        {sub3.subnav}
+                      </a>
+                    </li>
+                    )
+                  })}
+                </ul>
+
+                <ul>
+                {SubNav4.map(sub4=>
+                  {
+                    return(
+                    <li>
+                      <a href={sub4.href}>
+                        {sub4.subnav}
+                      </a>
+                    </li>
+                    )
+                  })}
+                </ul>
+
+                <ul>
+                {SubNav1.map(sub5=>
+                  {
+                    return(
+                    <li>
+                      <a href={sub5.href}>
+                        {sub5.subnav}
+                      </a>
+                    </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
       </div>
     </header>
@@ -379,7 +583,7 @@ function Section()
   return(
     <section className="full-container">
       <div className="slider-outcontainer">
-        <div className="full-contents">
+        {/* <div className="full-contents">
           <div className="slider">
             <div className="img-box">
               <img src="/images/slide1.jpg" alt="슬라이드1" />
@@ -394,7 +598,8 @@ function Section()
               <img src="/images/slide4.jpg" alt="슬라이드1" />
             </div>
           </div>
-        </div>
+        </div> */}
+        <Swiper/>
         <div className="btn-slide">
             <div className="btn-slider">
               {Slide_Btn.map(SlideBtn=>
@@ -406,6 +611,8 @@ function Section()
             </div>
           </div>
       </div>
+
+      
       
         <article className="contents store">
           <div className="in-container">
@@ -455,7 +662,7 @@ function Section()
                   <div className="info-container">
                     <a href={StoreCon.href} className='info'>
                       <p>
-                        <strong>{StoreCon.storeTit}</strong>
+                        <span>{StoreCon.storeTit}</span>
                       </p>
                       <address>
                         {StoreCon.address}
@@ -665,6 +872,7 @@ function App()
       <Header/>
       <Section/>
       <Footer/>
+      <Swiper></Swiper>
     </div>
   )
 }
