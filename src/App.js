@@ -2,6 +2,7 @@
 import React,{useState,useEffect,useRef} from 'react';
 import './App.css';
 import Swiper from './swiper';
+import Navon from './Nav';
 
 
 
@@ -493,7 +494,7 @@ function Header()
                       {Dum_Date.map(nav=>
                       {
                         return(
-                          <li>
+                          <li  ref={Navon.subNavref} style={{transtion:'0.3s'}} onClick={Navon.NavOn}>
                             <a href={nav.href}>
                             {nav.nav}
                             </a>
@@ -867,8 +868,11 @@ function Footer()
 function App()
 {
 
-  const [subNav,setSubNav]= useState(0);
-  const subNavref=useRef();
+useEffect(()=>
+{
+  if(Navon.subNav.display==false)
+    Navon.subNavref='none';
+},[Navon.subNav])
 
   
   return(
@@ -876,7 +880,7 @@ function App()
       <Header/>
       <Section/>
       <Footer/>
-      <Swiper></Swiper>
+      
     </div>
   )
 }
