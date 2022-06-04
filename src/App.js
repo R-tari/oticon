@@ -7,6 +7,7 @@ import Swiper from './swiper';
 
 
 
+
 export const DUMMY_SRC = [
   {
     id: 'd1',
@@ -559,7 +560,7 @@ function Header()
                 </ul>
 
                 <ul>
-                {SubNav1.map(sub5=>
+                {SubNav5.map(sub5=>
                   {
                     return(
                     <li>
@@ -865,6 +866,9 @@ function Footer()
 
 function App()
 {
+
+  const [subNav,setSubNav]= useState(0);
+  const subNavref=useRef();
 
   
   return(

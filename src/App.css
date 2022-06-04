@@ -171,7 +171,7 @@ img
 .header .navigation
 {
   transform:rotate(0.08deg);
-  margin-left:19px;
+  margin-right:4px;
 }
 .header .navigation li a
 {
@@ -195,12 +195,20 @@ img
 .subNav
 {
   border-top:1px solid #c60081;
+  position:absolute;
+  left:0;
+  right:0;
+  z-index:1;
+  height:364px;
+  background-color: #f4f4f4;
+ 
 }
 .header .subNav .sub-outcontainer
 {
   max-width:1300px;
   padding:0 30px;
   margin:0 auto;
+  /* display:none; */
 }
 .header .subNav .sub-incontainer
 {
@@ -208,17 +216,36 @@ img
   flex-flow:row nowrap;
   
   
-  width:849.71px;
+  width:899.74px;
   margin:0 0 0 auto;
   text-align:center
 }
-.header .subNav .sub-incontainer ul:first-child
+.header .subNav .sub-incontainer ul:first-child,.header .subNav .sub-incontainer ul:nth-child(3)
 {
   width:195.5px;
 }
+
+.header .subNav .sub-incontainer ul:nth-child(2)
+{
+  width:159.7px;
+}
+.header .subNav .sub-incontainer ul
+{
+  padding:20px 0;
+}
+.header .subNav .sub-incontainer ul li
+{
+  margin-bottom:12px;
+}
 .header .subNav .sub-incontainer ul li a
 {
-  font-size:14px;
+  line-height: 1.5em;
+  letter-spacing: -.025em;
+  color: #555;
+}
+.header .subNav .sub-incontainer ul:nth-child(4),.header .subNav .sub-incontainer ul:nth-child(5)
+{
+  width:177.61px;
 }
 
 
