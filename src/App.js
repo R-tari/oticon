@@ -2,12 +2,7 @@
 import React,{useState,useEffect,useRef} from 'react';
 import './App.css';
 import Swiper from './swiper';
-import Navon from './Nav';
-
-
-
-
-
+import Nav from './Nav';
 
 export const DUMMY_SRC = [
   {
@@ -53,180 +48,9 @@ export const Slide_Btn=
   },
 ]
 
-export const Dum_Date =
-[
-  {
-    id: 1,
-    href:'#',
-    nav: '보청기제품'   
-  },
 
-  {
-    id: 1,
-    href:'#',
-    nav: '대리점'   
-  },
 
-  {
-    id: 1,
-    href:'#',
-    nav: '미디어센터'   
-  },
 
-  {
-    id: 1,
-    href:'#',
-    nav: '고객센터'   
-  },
-
-  {
-    id: 1,
-    href:'#',
-    nav: '회사소개'   
-  },
-]
-
-export const SubNav1=
-[
-  {
-    id:1,
-    href:'#',
-    subnav:'보청기'
-  },
-
-  {
-    id:2,
-    href:'#',
-    subnav:'정부지원보청기'
-  },
-
-  {
-    id:3,
-    href:'#',
-    subnav:'보청기 무선통신기기'
-  },
-
-  {
-    id:4,
-    href:'#',
-    subnav:'보청기 악세사리'
-  },
-
-  {
-    id:5,
-    href:'#',
-    subnav:'청력진단장비'
-  },
-
-  {
-    id:6,
-    href:'#',
-    subnav:'청취보조장비'
-  },
-
-  {
-    id:7,
-    href:'#',
-    subnav:'난청과 보청기란'
-  },
-
-  {
-    id:8,
-    href:'#',
-    subnav:'오티콘의 기술력'
-  },
-
-  {
-    id:9,
-    href:'#',
-    subnav:'오티콘의 철학'
-  }
-]
-
-export const SubNav2=
-[
-  {
-    id:1,
-    href:'#',
-    subnav:'대리점 안내'
-  }
-]
-
-export const SubNav3=
-[
-  {
-    id:1,
-    href:'#',
-    subnav:'공지사항'
-  },
-  {
-    id:2,
-    href:'#',
-    subnav:'이벤트'
-  },
-  {
-    id:3,
-    href:'#',
-    subnav:'홍보자료'
-  },
-  {
-    id:4,
-    href:'#',
-    subnav:'홍보영상'
-  },
-]
-
-export const SubNav4=
-[
-  {
-    id:1,
-    href:'#',
-    subnav:'1:1문의'
-  },
-  {
-    id:2,
-    href:'#',
-    subnav:'자주하는 질문'
-  },
-  {
-    id:3,
-    href:'#',
-    subnav:'고객소리함'
-  },
-]
-export const SubNav5=
-[
-  {
-    id:1,
-    href:'#',
-    subnav:'회사개요'
-  },
-  {
-    id:2,
-    href:'#',
-    subnav:'CEO인사말'
-  },
-  {
-    id:3,
-    href:'#',
-    subnav:'연혁'
-  },
-  {
-    id:4,
-    href:'#',
-    subnav:'CI소개'
-  },
-  {
-    id:5,
-    href:'#',
-    subnav:'계열사'
-  },
-  {
-    id:6,
-    href:'#',
-    subnav:'찾아오시는 길'
-  },
-]
 
 export const Store_Date=
 [
@@ -482,100 +306,7 @@ function Header()
             </div>
           </div>
       
-      <div class="nav">
-          <div class="container">
-              <h1 class="logo">
-                 <a href="#">
-                    <img src="/images/logo.png" alt="logo"/>
-                  </a>
-              </h1>
-              <nav class="navigation">
-                  <ul>
-                      {Dum_Date.map(nav=>
-                      {
-                        return(
-                          <li  ref={Navon.subNavref} style={{transtion:'0.3s'}} onClick={Navon.NavOn}>
-                            <a href={nav.href}>
-                            {nav.nav}
-                            </a>
-                          </li>
-                        )
-                      })
-                    }
-                  </ul>
-              </nav>
-          </div>
-          <div className="subNav">
-            <div className="sub-outcontainer">
-              <div className="sub-incontainer">
-                <ul>
-                {SubNav1.map(sub1=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub1.href}>
-                        {sub1.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul>
-                {SubNav2.map(sub2=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub2.href}>
-                        {sub2.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul>
-                {SubNav3.map(sub3=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub3.href}>
-                        {sub3.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul>
-                {SubNav4.map(sub4=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub4.href}>
-                        {sub4.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul>
-                {SubNav5.map(sub5=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub5.href}>
-                        {sub5.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
+        <Nav/>
     </header>
   );
 }
@@ -868,19 +599,22 @@ function Footer()
 function App()
 {
 
+
 useEffect(()=>
 {
-  if(Navon.subNav.display==false)
-    Navon.subNavref='none';
+  if(Navon.subNav==undefined)
+  
+  console.log(Navon)
+  console.log(Navon.subNav)
+    // Navon.subNavref.display='none';
 },[Navon.subNav])
 
-  
+ 
   return(
     <div className="wrap">
       <Header/>
       <Section/>
       <Footer/>
-      
     </div>
   )
 }
