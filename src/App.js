@@ -262,8 +262,7 @@ export const FooterList=
 
 
 
-function Header()
-{
+function Header() {
   return(
     <header class="header">
      
@@ -306,7 +305,7 @@ function Header()
             </div>
           </div>
       
-        <Nav/>
+        <Nav />
     </header>
   );
 }
@@ -598,18 +597,6 @@ function Footer()
 
 function App()
 {
-
-
-useEffect(()=>
-{
-  if(Navon.subNav==undefined)
-  
-  console.log(Navon)
-  console.log(Navon.subNav)
-    // Navon.subNavref.display='none';
-},[Navon.subNav])
-
- 
   return(
     <div className="wrap">
       <Header/>

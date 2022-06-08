@@ -1,15 +1,14 @@
 import React,{useState,useEffect,useRef} from 'react';
+import {Dum_Date,SubNav1,SubNav2,SubNav3,SubNav4,SubNav5 } from './data/data_nav'
 
-function NavOn() {
+function Nav() {
   const [subNav,setSubNav]= useState(false);
   const subNavref=useRef();
 
-  
-
-const navOnHandler = () =>{
-  setSubNav(!subNav);
-  console.log(subNav);
-}
+  const NavOn=()=> {
+    setSubNav(!subNav);
+    console.log(subNav, 'Nav.js')
+  }
 
   return (
     <div class="nav">
@@ -23,7 +22,7 @@ const navOnHandler = () =>{
                   <ul>
                       {Dum_Date.map(nav=> {
                         return(
-                          <li  ref={subNavref} style={{transtion:'0.3s'}} onClick={navOnHandler}>
+                          <li  ref={subNavref} style={{transtion:'0.3s'}} onClick={NavOn}>
                             <a href={nav.href}>
                             {nav.nav}
                             </a>
@@ -34,7 +33,7 @@ const navOnHandler = () =>{
                   </ul>
               </nav>
           </div>
-          <div className="subNav">
+          <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s'} }>
             <div className="sub-outcontainer">
               <div className="sub-incontainer">
                 <ul>
@@ -54,7 +53,7 @@ const navOnHandler = () =>{
                 {SubNav2.map(sub2=>
                   {
                     return(
-                    <li>
+                    <li >
                       <a href={sub2.href}>
                         {sub2.subnav}
                       </a>
@@ -108,4 +107,4 @@ const navOnHandler = () =>{
   )
 }
 
-export default NavOn;
+export default Nav;
