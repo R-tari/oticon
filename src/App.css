@@ -229,10 +229,23 @@ img
 {
   width:159.7px;
 }
-.header .subNav .sub-incontainer ul
+.header .subNav .sub-incontainer ul 
 {
   padding:20px 0;
+  display:inline-block;
+  opacity: 1;
+  
+  transition:0.3s
 }
+
+.header .subNav .sub-incontainer .ul_active
+{
+  transition:0.3s;
+  display:none;
+  opacity: 0;
+  transition-delay: 1s;
+}
+
 .header .subNav .sub-incontainer ul li
 {
   margin-bottom:12px;
