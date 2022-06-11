@@ -35,8 +35,8 @@ function Nav() {
           </div>
           <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s'} }>
             <div className="sub-outcontainer">
-              <div className="sub-incontainer">
-                <ul className={subNav? 'null':'ul_active'}>
+              <div className="sub-incontainer" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                <ul className={subNav? 'ul_active':null}>
                 {SubNav1.map(sub1=>
                   {
                     return(
@@ -49,7 +49,7 @@ function Nav() {
                   })}
                 </ul>
 
-                <ul className={subNav? 'null':'ul_active'}>
+                <ul className={subNav? 'ul_active':null}>
                 {SubNav2.map(sub2=>
                   {
                     return(
@@ -62,7 +62,7 @@ function Nav() {
                   })}
                 </ul>
 
-                <ul className={subNav? 'null':'ul_active'}>
+                <ul className={subNav? 'ul_active':null}>
                 {SubNav3.map(sub3=>
                   {
                     return(
@@ -75,7 +75,7 @@ function Nav() {
                   })}
                 </ul>
 
-                <ul className={subNav? 'null':'ul_active'}>
+                <ul className={subNav? 'ul_active':null}>
                 {SubNav4.map(sub4=>
                   {
                     return(
@@ -88,7 +88,7 @@ function Nav() {
                   })}
                 </ul>
 
-                <ul className={subNav? 'null':'ul_active'}>
+                <ul className={subNav? 'ul_active':null}>
                 {SubNav5.map(sub5=>
                   {
                     return(
