@@ -386,7 +386,7 @@ article
   margin-bottom:20px;
 }
 
-.next
+.prev
 {
   position: relative;
   background-color:#000;
@@ -397,7 +397,7 @@ article
   margin-right:5px;
 
 }
-.next::after 
+.prev::after 
 {
   position: absolute;
   left: 40%; 
@@ -413,7 +413,7 @@ article
  
 }
 
-.prev
+.next
 {
   position: relative;
   background-color:#000;
@@ -424,7 +424,7 @@ article
  
 
 }
-.prev::after 
+.next::after 
 {
   position: absolute;
   left: 25%; 

@@ -34,8 +34,8 @@ function Nav() {
               </nav>
           </div>
           <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s'} }>
-            <div className="sub-outcontainer">
-              <div className="sub-incontainer" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+            <div className="sub-outcontainer"style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+              <div className="sub-incontainer" >
                 <ul className={subNav? 'ul_active':null}>
                 {SubNav1.map(sub1=>
                   {
