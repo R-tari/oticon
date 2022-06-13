@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import './slide.css';
+
 
 const swiper = () => {
   return (
@@ -9,6 +9,9 @@ const swiper = () => {
       slidesPerView={1}
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
+      loop={true}
+      style={{height:'423px'}}
+      speed={500}
       
     >
       <SwiperSlide>

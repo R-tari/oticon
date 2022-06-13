@@ -63,7 +63,7 @@ export const Store_Date=
   {
     id:'sotre7',
     href:'#',
-    src:'/images/강화난천센터.jpg',
+    src:'/images/강화난청센터.jpg',
     alt:'강화난청센터점',
     storeTit:'오티콘보청기 강화난청센터',
     address:'인천 강화군 강화읍 강화대로 404 (관청리)',
@@ -98,6 +98,29 @@ export const Store_Date=
     storeTit:'오티콘보청기 도봉점',
     address:'서울 도봉구 마들로 650 (방학동, 도봉월드상가) 제 2층 제 217호',
     tel:'02-6952-8228',
+  },
+  
+]
+
+export const ProductArea2=
+[
+  {
+    id:1,
+    txt:'오티콘 오픈(Opn)',
+    src:'/images/opn.png',
+    alt:'opn 제품 이미지'
+  },
+  {
+    id:2,
+    txt:'오티콘 모어(More)',
+    src:'/images/more.png',
+    alt:'more 제품 이미지'
+  },
+  {
+    id:3,
+    txt:'오티콘 루비',
+    src:'/images/귀걸이형.jpg',
+    alt:'귀걸이형 루비 제품 이미지'
   },
   
 ]

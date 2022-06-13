@@ -4,6 +4,8 @@ import './App.css';
 import Swiper from './swiper';
 import Nav from './Nav';
 import CardSlide from './cardSlide';
+import ProductSlide from './productSlide';
+
 
 export const DUMMY_SRC = [
   {
@@ -337,8 +339,8 @@ function Section()
             )
           })}
         </div>
-
-        <article className='product2'>
+        <ProductSlide></ProductSlide>
+        {/* <article className='product2'>
           <div className="in-container">
             <h2 className='tit'>제품소개</h2>
             <div className="btn-box">
@@ -364,7 +366,7 @@ function Section()
              }
             </div>
           </div>
-        </article>
+        </article> */}
 
         <article className="event">
           <div className="img-box">
