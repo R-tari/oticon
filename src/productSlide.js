@@ -26,6 +26,23 @@ const ProductSlide=()=>
              navigation={{ // 네비게이션 적용, < >
               nextEl: '.product-next', // 다음 버튼 클래스명
               prevEl: '.product-prev', // 이전 버튼 클래스명
+
+              
+             }}
+             observer={true}
+             onTouchStart={(swiper,event)=>
+             {
+                 swiper.allowTouchMove=true;
+             }}
+             
+             onTouchMove={(swiper,evevt)=>{
+                 console.log(swiper.touches.startX-swiper.touches.currentX)
+                 if(Math.abs(swiper.touches.startX-swiper.touches.currentX)>200)
+                 {
+                     swiper.allowTouchMove=false;
+                 }
+
+                
              }}
             >
           <div className="product-container">

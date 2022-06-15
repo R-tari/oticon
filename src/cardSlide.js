@@ -14,7 +14,7 @@ const CardSlide=()=>{
     const [Slider,setSlider] = useState(0);
     const slideRef=useRef(0);
     const swiper = useSwiper(0)
-
+  
 
     function Next()
     {
@@ -55,22 +55,22 @@ const CardSlide=()=>{
                     prevEl: '.prev', // 이전 버튼 클래스명
                    
                 }}
-                touchEventsTarget={'container'}
+
                 observer={true}
-                noSwipe={true}
-                // noSwipingClass={'store'}
-                // observeParents={true}
-                edgeSwipeDetection={true}
-                longSwipes={true}
-                longSwipesMs={100}
-                longSwipesRatio={2}
                 onTouchStart={(swiper,event)=>
                 {
-                    console.log(swiper.$el)
+                    swiper.allowTouchMove=true;
                 }}
-                // touchMove={(swiper,evevt)=>{
-                //     if()
-                // }}
+                
+                onTouchMove={(swiper,evevt)=>{
+                    console.log(swiper.touches.startX-swiper.touches.currentX)
+                    if(Math.abs(swiper.touches.startX-swiper.touches.currentX)>220)
+                    {
+                        swiper.allowTouchMove=false;
+                    }
+
+                   
+                }}
                     
                 // onSliderMove={(swiper)=>{
 
