@@ -14,8 +14,8 @@ const ProductSlide=()=>
         <div className="in-container">
           <h2 className='tit'>제품소개</h2>
           <div className="btn-box">
-            <div className="btn prev">prev</div>
-            <div className="btn next">next</div>
+            <div className=" product-prev">prev</div>
+            <div className=" product-next">next</div>
           </div>
           <Swiper
               modules={[Navigation]}
@@ -24,8 +24,8 @@ const ProductSlide=()=>
               slidesPerView={2}
              speed={500}
              navigation={{ // 네비게이션 적용, < >
-              nextEl: '.next', // 다음 버튼 클래스명
-              prevEl: '.prev', // 이전 버튼 클래스명
+              nextEl: '.product-next', // 다음 버튼 클래스명
+              prevEl: '.product-prev', // 이전 버튼 클래스명
              }}
             >
           <div className="product-container">

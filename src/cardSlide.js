@@ -1,9 +1,10 @@
 import React,{useState,useEffect,useRef} from 'react';
 import {Store_Date } from './data/data_article'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Navigation} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation'
+import swiper from './swiper';
 
 
 
@@ -12,7 +13,7 @@ const CardSlide=()=>{
    
     const [Slider,setSlider] = useState(0);
     const slideRef=useRef(0);
-    
+    const swiper = useSwiper(0)
 
 
     function Next()
@@ -31,6 +32,7 @@ const CardSlide=()=>{
         setSlider(Slider-1);
     }
 
+ 
    
 
     return(
@@ -51,7 +53,33 @@ const CardSlide=()=>{
                    navigation={{ // 네비게이션 적용, < >
                     nextEl: '.next', // 다음 버튼 클래스명
                     prevEl: '.prev', // 이전 버튼 클래스명
+                   
                 }}
+                touchEventsTarget={'container'}
+                observer={true}
+                noSwipe={true}
+                // noSwipingClass={'store'}
+                // observeParents={true}
+                edgeSwipeDetection={true}
+                longSwipes={true}
+                longSwipesMs={100}
+                longSwipesRatio={2}
+                onTouchStart={(swiper,event)=>
+                {
+                    console.log(swiper.$el)
+                }}
+                // touchMove={(swiper,evevt)=>{
+                //     if()
+                // }}
+                    
+                // onSliderMove={(swiper)=>{
+
+                //                             if(swiper.$el.mouseout)
+                //                             swiper.slideNext                             
+                //                         }}
+                
+
+                
                 >
                 
                 
