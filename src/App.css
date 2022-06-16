@@ -251,6 +251,11 @@ img
 {
   margin-bottom:12px;
 }
+
+.header .subNav .sub-incontainer ul li:hover a
+{
+  color:#c60081;
+}
 .header .subNav .sub-incontainer ul li a
 {
   line-height: 1.5em;
