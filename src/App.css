@@ -332,12 +332,13 @@ img
   cursor:pointer;
 }
 
-#btn-1
+/* #btn-1
 {
-  border-left:1px solide black;
-}
+  background-color:#c60081;
+  color:#fff;
+} */
 
-#btn-1
+.swiper-slide-thumb-active .slide-btn
 {
   background-color:#c60081;
   color:#fff;

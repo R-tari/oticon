@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide_Btn } from './data/data_slide';
 import { Thumbs } from 'swiper';
@@ -6,10 +6,18 @@ import 'swiper/css';
 import 'swiper/css/thumbs';
 
 
+
 const Slide = () => {
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [slideIdx,setSlideIdx] =useState(null);
+  const [thumbs, setThumbs] = useState(null);
+  const btn=useRef();
 
+  useEffect(()=>
+  {
+    let top=document.querySelector('.swiper-slide-active')
+    console.log(top)
+  })
 
   return (
     <div className="slider-outcontainer">
@@ -20,9 +28,15 @@ const Slide = () => {
         loop={true}
         style={{height:'423px'}}
         speed={500}
-        thumbs={{swiper:thumbsSwiper}}
-      
-       
+        thumbs={{
+                  swiper:thumbs,
+                  autoScrollOffset:1,
+                  multipleActiveThumbs:false
+                }}
+        onTouchEnd={(swiper,event)=>
+          {
+            console.log(swiper.activeIndex)
+          }}
       >
         <SwiperSlide>
         <div className="img-box">
@@ -51,15 +65,33 @@ const Slide = () => {
            loop={true}
            slidesPerView={3}
            watchSlidesProgress
-           onSwiper={setThumbsSwiper}
+           onSwiper={setThumbs}
+           nested={true}
+           slideActiveClass={'swiper-slide-thumb-active'}
+
+           onTouchEnd={(swiper,event)=>
+          {
+            console.log(swiper.clickedIndex)
+            swiper.thumbs.init()
+          }}
+
+           onActiveIndexChange={(swiper)=>
+          {
+            let center1=document.querySelector('.slide-btn')
+            // let center=swiper.el.getElementsByClassName('swiper-slide-next').item
+
+            console.log(thumbs)
+          }}
+
            >
                 <div className="btn-slide">
                     <div className="btn-slider">
                         {Slide_Btn.map(SlideBtn=>
                         {
+                         
                             return(
                                 <SwiperSlide>
-                                    <div className="slide-btn" id={SlideBtn.id}>
+                                    <div className="slide-btn" id={SlideBtn.id} ref={btn}>
                                         <p>{SlideBtn.txt}</p>
                                     </div>
                                     </SwiperSlide>
