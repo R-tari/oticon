@@ -1,10 +1,12 @@
 
 import React,{useState,useEffect,useRef} from 'react';
 import './App.css';
-import Swiper from './swiper';
+import Slide from './Slide';
 import Nav from './Nav';
 import CardSlide from './cardSlide';
 import ProductSlide from './productSlide';
+
+
 
 
 export const DUMMY_SRC = [
@@ -28,28 +30,6 @@ export const DUMMY_SRC = [
   }
 ]
 
-export const Slide_Btn=
-[
-  {
-    id:'btn-1',
-    txt:'보청기가 필요할땐 오티콘'
-  },
-
-  {
-    id:'btn-2',
-    txt:'정부지원보청기'
-  },
-
-  {
-    id:'btn-3',
-    txt:'64채널 프리미엄 오티콘 모어(More)'
-  },
-
-  {
-    id:'btn-4',
-    txt:'(2021)올해의 브랜드 5년 연속 대상'
-  },
-]
 
 
 
@@ -215,7 +195,7 @@ function Section()
 {
   return(
     <section className="full-container">
-      <div className="slider-outcontainer">
+   
         {/* <div className="full-contents">
           <div className="slider">
             <div className="img-box">
@@ -232,8 +212,9 @@ function Section()
             </div>
           </div>
         </div> */}
-        <Swiper/>
-        <div className="btn-slide">
+        <Slide/>
+     
+        {/* <div className="btn-slide">
             <div className="btn-slider">
               {Slide_Btn.map(SlideBtn=>
                 {
@@ -242,8 +223,8 @@ function Section()
                         </div>)
                 })}
             </div>
-          </div>
-      </div>
+          </div> */}
+     
 
       
       
