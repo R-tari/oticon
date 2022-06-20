@@ -38,7 +38,7 @@ img
   max-width:1300px;
   margin:0 auto;
   display:grid;
-  grid-template-columns: 948px 320px;
+  grid-template-columns: 320px 320px 320px 320px;
   transform : rotate(0.07deg); 
   padding-top:15px;
 
@@ -194,7 +194,7 @@ img
 
 .subNav
 {
-  border-top:1px solid #c60081;
+  /* border-top:1px solid #c60081; */
   position:absolute;
   left:0;
   right:0;
@@ -271,9 +271,10 @@ img
 /* 슬라이더 스타일 */
 .slider-outcontainer
 {
+  max-width:918px;
   margin:0 15px;
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
 }
@@ -360,7 +361,7 @@ article
 
 .store
 {
-  margin:0px 15px 30px 15px;
+  margin:0px 15px 30px 4px;
   border:1px solid #ddd;
   width:290px;
   height:220px;
@@ -517,11 +518,12 @@ article
 
 .search
 {
+  margin-left:4px;
   height:220px;
   background:no-repeat url(../public/images/map.png) left 25px bottom 25px;
   padding: 20px 19px 15px 25px;
   position:relative;
-  grid-column: 2;
+  
 }
 
 .search h2
@@ -613,6 +615,7 @@ article
 
  .product1
 {
+  margin-left:15px;
   display:flex;
   flex-flow:column nowrap;
   height:280px;
@@ -624,6 +627,11 @@ article
 .product2
 {
   padding:20px 12px 10px;
+}
+
+.product2 .tit
+{
+  margin-bottom:20px;
 }
 
 .product2 h2
@@ -677,11 +685,13 @@ article
   width:290px;
   margin:0;
   border:none;
+  margin-left:4px;
 }
 
 /* news 스타일 */
 .news
 {
+  margin-left:4px;
   border:none;
 }
 .news .in-container
@@ -819,7 +829,7 @@ article
   color:#aaa;
 }
 
-.footer-bottom .full-container
+.footer-bottom .container
 {
   display:flex;
   font-weight:300;
@@ -829,17 +839,18 @@ article
 {
   margin-right:50px;
 }
-.footer-bottom .full-container .txt-box
+.footer-bottom .container .txt-box
 {
   flex: 1 1 auto;
   line-height:1.75em;
 }
-.footer-bottom .full-container .txt-box span
+.footer-bottom .container .txt-box span
 {
   margin-right:10px;
 }
 .footer .copyright
 {
+  margin-left:100px;
   display:inline-block;
   padding-top:23px;
 }
@@ -856,18 +867,48 @@ article
     grid-template-columns: repeat(3,1fr);
   }  
 
+  .header .navigation li a
+  {
+    font-size:17px;
+  }
+  .header .nav .container ul li
+  {
+    padding:0 28px;
+  }
   .slider-outcontainer
   {
     width:918px;
-    height:422px;
-
+    height:470px;
+    margin-bottom:20px;
     grid-column-end: 4;
   }
 
-  .bottom-section
+  .store
   {
-    display:block;
+    margin:0 auto;
   }
+  .search
+  {
+    margin:0 0 20px 9px
+  }
+  .product1
+  {
+   margin-left:8px;
+    height:220px;
+  }
+  .product
+  {
+    margin-bottom:10px;
+  }
+  .news
+  {
+    margin-left:9px;
+  }
+  article
+  {
+    margin-bottom:20px;
+  }
+
 }
 
 

@@ -89,7 +89,7 @@ function Nav() {
                   </ul>
               </nav>
           </div>
-          <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s'} }>
+          <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s',borderTop:subNav? '1px solid #c60081':'none'} }>
             <div className="sub-outcontainer"style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
               <div className="sub-incontainer" >
                 <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 

@@ -298,7 +298,7 @@ function Section()
             )
           })}
 
-        <section className='bottom-section'>
+      
         <div className="product1">
           {ProductArea1.map(Product1=>
           {
@@ -354,7 +354,7 @@ function Section()
             <img src="/images/b_event.jpg" alt="이벤트" />
           </div>
         </article>
-        </section>
+      
 
         <article className="news">
           <div className="in-container">
@@ -415,7 +415,7 @@ function Footer()
     <footer className="footer">
       
         <div className="footer-top">
-          <div className="full-container">
+          <div className="container ">
             <ul>
             {FooterList.map(Footerlist=>
               {
@@ -430,7 +430,7 @@ function Footer()
         </div>
          
         <div className="footer-bottom">
-          <div className="full-container">
+          <div className="container footer-container">
             <div className="img-box">
               <img src="/images/f_logo.png" alt="footer로고" />
             </div>
