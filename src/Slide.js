@@ -1,23 +1,23 @@
 import React,{useState,useEffect,useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide_Btn } from './data/data_slide';
-import { Thumbs } from 'swiper';
+import { Thumbs,Controller } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/thumbs';
 
 
 
-const Slide = () => {
 
-  const [slideIdx,setSlideIdx] =useState(null);
+const Slide = () => {
+  const [controlled,setControlled] =useState(null);
+
   const [thumbs, setThumbs] = useState(null);
   const btn=useRef();
 
-  useEffect(()=>
-  {
-    let top=document.querySelector('.swiper-slide-active')
-    console.log(top)
-  })
+
+  const [top,setTop]=useState(null);
+
+
 
   return (
     <div className="slider-outcontainer">
@@ -31,12 +31,15 @@ const Slide = () => {
         thumbs={{
                   swiper:thumbs,
                   autoScrollOffset:1,
-                  multipleActiveThumbs:false
                 }}
-        onTouchEnd={(swiper,event)=>
+        onUpdate={(swiper)=>
           {
-            console.log(swiper.activeIndex)
-          }}
+            swiper.slideTo(3,500)
+            console.log('제발')
+            setTop(swiper);
+          }
+        }
+       
       >
         <SwiperSlide>
         <div className="img-box">
@@ -66,21 +69,24 @@ const Slide = () => {
            slidesPerView={3}
            watchSlidesProgress
            onSwiper={setThumbs}
-           nested={true}
            slideActiveClass={'swiper-slide-thumb-active'}
-
-           onTouchEnd={(swiper,event)=>
-          {
-            console.log(swiper.clickedIndex)
-            swiper.thumbs.init()
-          }}
+           shortSwipes={false}
 
            onActiveIndexChange={(swiper)=>
           {
-            let center1=document.querySelector('.slide-btn')
-            // let center=swiper.el.getElementsByClassName('swiper-slide-next').item
+            setControlled(swiper.realIndex);
 
-            console.log(thumbs)
+
+          }}
+
+           onTouchEnd={(swiper,e)=>
+          {
+            
+            console.log(controlled)
+            console.log(swiper.realIndex)
+            swiper.update();
+
+            top.slideToLoop(controlled,500)
           }}
 
            >
