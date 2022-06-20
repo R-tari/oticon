@@ -277,18 +277,15 @@ img
   grid-row-start: 1;
   grid-row-end: 3;
 }
-.full-contents
+/* .full-contents
 {
-  
   width:918px;
   overflow:hidden;
-  
 }
 
 .full-contents .slider
 {
   width:3672px;
-  
   transform:translateX(0px);
 }
 
@@ -297,8 +294,7 @@ img
   width:918px;
   height:423px;
   float:left;
-}
-
+} 
 
 
 
@@ -307,7 +303,7 @@ img
 {
  width:100%;
  
-}
+}*/
 
 .btn-slide
 {
@@ -331,12 +327,6 @@ img
   line-height: 46px;
   cursor:pointer;
 }
-
-/* #btn-1
-{
-  background-color:#c60081;
-  color:#fff;
-} */
 
 .swiper-slide-thumb-active .slide-btn
 {
@@ -856,6 +846,28 @@ article
 
 
 
+/* 반응형 스타일  */
 
+@media (max-width:1289px)
+{
+  .full-container
+  {
+    max-width:945px;
+    grid-template-columns: repeat(3,1fr);
+  }  
+
+  .slider-outcontainer
+  {
+    width:918px;
+    height:422px;
+
+    grid-column-end: 4;
+  }
+
+  .bottom-section
+  {
+    display:block;
+  }
+}
 
 

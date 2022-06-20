@@ -39,7 +39,15 @@ const Slide = () => {
             setTop(swiper);
           }
         }
-       
+        
+        // breakpoints=
+        // {{
+        //   960:
+        //   {
+        //     width:918,
+        //     heighth:422
+        //   }
+        // }}
       >
         <SwiperSlide>
         <div className="img-box">
