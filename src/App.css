@@ -325,6 +325,19 @@ img
 
 } 
 
+.mobile-overlay
+{
+  display:none;
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+  background-color: rgba(0,0,0,0.6);
+  z-index:4;
+
+}
+
 /* 슬라이더 스타일 */
 .slider-outcontainer
 {
@@ -986,8 +999,8 @@ article
     background-color: white;
     height:100%;
     z-index:5;
-    right:0;
-    /* right:-250px; 집어넣기 */
+    /* right:0; */
+    right:-250px; 
     top:0;
     width:250px;
     transition:0.4s;

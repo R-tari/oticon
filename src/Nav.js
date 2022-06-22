@@ -3,20 +3,37 @@ import {Dum_Date,SubNav1,SubNav2,SubNav3,SubNav4,SubNav5 } from './data/data_nav
 
 function Nav() {
   const [subNav,setSubNav]= useState(false);
+  const [mNav,setMNav]=useState(false)
   
-  const subNavref=useRef();
+  const navref=useRef();
 
   let mainNav=document.getElementsByClassName('main-nav');
   let subUl=document.getElementsByClassName('ul_active')
-
+  
   const NavOn=()=> {
-    setSubNav(true);
+    if(window.innerWidth>1024)
+    {
+      setSubNav(true);
+    }
+    else
+    {
+      setMNav(true);
+    }
+    
     console.log(subNav, 'Nav.js')
   }
 
   const NavOff=()=> {
-    setSubNav(false);
-    console.log(subNav, 'Nav.js')
+    
+    if(window.innerWidth>1024)
+    {
+      setSubNav(false);
+    }
+  }
+
+  const MNavOff=()=>
+  {
+    setMNav(false);
   }
   const NavOut=()=>
   {
@@ -62,9 +79,18 @@ function Nav() {
       console.log(mainNav[4])
     })
 
-    
-  
   }
+
+
+  
+
+  // useEffect(()=>
+  // {
+  //   window.addEventListener("click", ClickOutSide);
+  //   return () => {
+  //     window.removeEventListener("click", ClickOutSide);
+  //   };
+  // },[])
 
   return (
     <div class="nav" onMouseLeave={NavOff}>
@@ -75,15 +101,15 @@ function Nav() {
                   </a>
               </h1>
               <nav class="navigation">
-                  <ul>
+                  <ul ref={navref} style={{right:mNav? '0':'-250px'}} className="nav-area">
                       <li>
                         <a href="#">HOME</a>
-                        <span className='close'/>
+                        <span className='close' onClick={MNavOff}/>
                       </li>
                       {Dum_Date.map(nav=> {
                         return(
-                          <li   style={{transtion:'0.3s'}} >
-                            <a ref={subNavref} href={nav.href} onMouseEnter={NavOn} className="main-nav">
+                          <li style={{transtion:'0.3s'}} >
+                            <a  href={nav.href} onMouseEnter={NavOn} className="main-nav">
                             {nav.nav}
                             </a>
                           </li>
@@ -91,9 +117,10 @@ function Nav() {
                       })
                     }
                   </ul>
+                  <div className="mobile-overlay" style={{display:mNav? 'block':'none'}} onClick={MNavOff} />
                   <div className="m-nav" onClick={NavOn}>
                         <div className="nav-btn">네비</div>
-                    </div>
+                  </div>
               </nav>
           </div>
           <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s',borderTop:subNav? '1px solid #c60081':'none'} }>
