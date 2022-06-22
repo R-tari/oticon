@@ -1,10 +1,10 @@
 import React,{useState,useEffect,useRef} from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide_Btn } from './data/data_slide';
-import { Thumbs,Controller } from 'swiper';
+import { Thumbs,Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/thumbs';
-
+import 'swiper/css/pagination'
 
 
 
@@ -22,11 +22,12 @@ const Slide = () => {
   return (
     <div className="slider-outcontainer">
       <Swiper
+
+      id="top-slide"
         modules={[Thumbs]}
         spaceBetween={0}
         slidesPerView={1}
         loop={true}
-        style={{height:'423px'}}
         speed={500}
         thumbs={{
                   swiper:thumbs,
@@ -40,14 +41,8 @@ const Slide = () => {
           }
         }
         
-        // breakpoints=
-        // {{
-        //   960:
-        //   {
-        //     width:918,
-        //     heighth:422
-        //   }
-        // }}
+     
+        
       >
         <SwiperSlide>
         <div className="img-box">
@@ -69,17 +64,26 @@ const Slide = () => {
           <img src="/images/slide4.jpg" alt="슬라이드4" />
         </div>
         </SwiperSlide>
+
+
       </Swiper>
+      <div className="btn-slider">
 
       <Swiper id="thumbs"
-          modules={[Thumbs]}
+          modules={[Thumbs,Pagination]}
            loop={true}
            slidesPerView={3}
            watchSlidesProgress
            onSwiper={setThumbs}
            slideActiveClass={'swiper-slide-thumb-active'}
            shortSwipes={false}
+           pagination=
+           {{
 
+             el:'.page',
+            type:'bullets'
+             
+          }}
            onActiveIndexChange={(swiper)=>
           {
             setControlled(swiper.realIndex);
@@ -97,25 +101,39 @@ const Slide = () => {
             top.slideToLoop(controlled,500)
           }}
 
+          breakpoints=
+          {{
+            960:
+            {
+              slidesPerView:3
+            },
+
+            640:
+            {
+              slidesPerView:1
+            }
+          }}
+
            >
-                <div className="btn-slide">
-                    <div className="btn-slider">
-                        {Slide_Btn.map(SlideBtn=>
-                        {
-                         
-                            return(
-                                <SwiperSlide>
-                                    <div className="slide-btn" id={SlideBtn.id} ref={btn}>
-                                        <p>{SlideBtn.txt}</p>
-                                    </div>
-                                    </SwiperSlide>
-                                    )
-                                
-                        })}
-                    </div>
-                </div>
+                
+              {Slide_Btn.map(SlideBtn=>
+              {
+                
+                  return(
+                      <SwiperSlide>
+                          <div className="slide-btn" id={SlideBtn.id} ref={btn}>
+                              <p>{SlideBtn.txt}</p>
+                          </div>
+                          </SwiperSlide>
+                          )
+                      
+              })}
+            
             
             </Swiper> 
+            <div className="page" style={{width:'15%',right:'5px',top:'8px',left:'auto'}}></div>
+      </div>
+            
     </div>
   );
 };

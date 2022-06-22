@@ -76,6 +76,10 @@ function Nav() {
               </h1>
               <nav class="navigation">
                   <ul>
+                      <li>
+                        <a href="#">HOME</a>
+                        <span className='close'/>
+                      </li>
                       {Dum_Date.map(nav=> {
                         return(
                           <li   style={{transtion:'0.3s'}} >
@@ -87,6 +91,9 @@ function Nav() {
                       })
                     }
                   </ul>
+                  <div className="m-nav" onClick={NavOn}>
+                        <div className="nav-btn">네비</div>
+                    </div>
               </nav>
           </div>
           <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s',borderTop:subNav? '1px solid #c60081':'none'} }>
