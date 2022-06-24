@@ -1,34 +1,4 @@
-export const Dum_Date = [
-  {
-    id: 1,
-    href:'#',
-    nav: '보청기제품'   
-  },
 
-  {
-    id: 1,
-    href:'#',
-    nav: '대리점'   
-  },
-
-  {
-    id: 1,
-    href:'#',
-    nav: '미디어센터'   
-  },
-
-  {
-    id: 1,
-    href:'#',
-    nav: '고객센터'   
-  },
-
-  {
-    id: 1,
-    href:'#',
-    nav: '회사소개'   
-  },
-]
 
 export const SubNav1=
 [

@@ -24,11 +24,7 @@ function Nav() {
   }
 
   const NavOff=()=> {
-    
-    if(window.innerWidth>1024)
-    {
       setSubNav(false);
-    }
   }
 
   const MNavOff=()=>
@@ -106,16 +102,109 @@ function Nav() {
                         <a href="#">HOME</a>
                         <span className='close' onClick={MNavOff}/>
                       </li>
-                      {Dum_Date.map(nav=> {
-                        return(
-                          <li style={{transtion:'0.3s'}} >
-                            <a  href={nav.href} onMouseEnter={NavOn} className="main-nav">
-                            {nav.nav}
-                            </a>
-                          </li>
-                        )
-                      })
-                    }
+
+                      <li style={{transtion:'0.3s'}} >
+                        <a  href="#" onMouseEnter={NavOn} className="main-nav">
+                          보청기제품
+                        </a>
+                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                            {SubNav1.map(sub1=>
+                              {
+                                return(
+                                <li>
+                                  <a href={sub1.href}>
+                                    {sub1.subnav}
+                                  </a>
+                                </li>
+                                )
+                              })}
+                          </ul>
+                          </div>
+                      </li>
+                      
+                      <li style={{transtion:'0.3s'}} >
+                        <a  href="#" onMouseEnter={NavOn} className="main-nav">
+                          대리점
+                        </a>
+                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                            {SubNav2.map(sub2=>
+                              {
+                                return(
+                                <li>
+                                  <a href={sub2.href}>
+                                    {sub2.subnav}
+                                  </a>
+                                </li>
+                                )
+                              })}
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li style={{transtion:'0.3s'}} >
+                        <a  href="#" onMouseEnter={NavOn} className="main-nav">
+                          미디어센터
+                        </a>
+                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                            {SubNav3.map(sub3=>
+                              {
+                                return(
+                                <li>
+                                  <a href={sub3.href}>
+                                    {sub3.subnav}
+                                  </a>
+                                </li>
+                                )
+                              })}
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li style={{transtion:'0.3s'}} >
+                        <a  href="#" onMouseEnter={NavOn} className="main-nav">
+                          고객센터
+                        </a>
+                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                            {SubNav4.map(sub4=>
+                              {
+                                return(
+                                <li>
+                                  <a href={sub4.href}>
+                                    {sub4.subnav}
+                                  </a>
+                                </li>
+                                )
+                              })}
+                          </ul>
+                        </div>
+                      </li>
+
+                      <li style={{transtion:'0.3s'}} >
+                        <a  href="#" onMouseEnter={NavOn} className="main-nav">
+                          회사소개
+                        </a>
+                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                            {SubNav5.map(sub5=>
+                              {
+                                return(
+                                <li>
+                                  <a href={sub5.href}>
+                                    {sub5.subnav}
+                                  </a>
+                                </li>
+                                )
+                              })}
+                          </ul>
+                        </div>
+                      </li>
+                        
+                      
+                    
                   </ul>
                   <div className="mobile-overlay" style={{display:mNav? 'block':'none'}} onClick={MNavOff} />
                   <div className="m-nav" onClick={NavOn}>
@@ -123,76 +212,11 @@ function Nav() {
                   </div>
               </nav>
           </div>
-          <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s',borderTop:subNav? '1px solid #c60081':'none'} }>
+           <div className="subNav" style={{height:subNav? '364px':'0',transition:'0.3s',borderTop:subNav? '1px solid #c60081':'none'} }>
             <div className="sub-outcontainer"style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
-              <div className="sub-incontainer" >
-                <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
-                {SubNav1.map(sub1=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub1.href}>
-                        {sub1.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}>
-                {SubNav2.map(sub2=>
-                  {
-                    return(
-                    <li >
-                      <a href={sub2.href}>
-                        {sub2.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}>
-                {SubNav3.map(sub3=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub3.href}>
-                        {sub3.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}>
-                {SubNav4.map(sub4=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub4.href}>
-                        {sub4.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-
-                <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}>
-                {SubNav5.map(sub5=>
-                  {
-                    return(
-                    <li>
-                      <a href={sub5.href}>
-                        {sub5.subnav}
-                      </a>
-                    </li>
-                    )
-                  })}
-                </ul>
-              </div>
+         
             </div>
-          </div>
+          </div> 
       </div>
   )
 }
