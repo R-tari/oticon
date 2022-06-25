@@ -168,6 +168,7 @@ img
 .navigation>ul>li
 {
   padding:0 53px;
+  transition:0.3s;
 }
 
 
@@ -291,9 +292,17 @@ img
   margin-bottom:12px;
 }
 
+.sub-nav ul>li:hover a
+{
+  color:#c60081;
+}
+
 .sub-nav>ul>li>a
 {
-  font-size:16px;
+
+  line-height: 1.5em;
+  letter-spacing: -.025em;
+  color: #555;
 }
 
 
@@ -322,16 +331,7 @@ img
 
 
 
-.header .subNav .sub-incontainer ul li:hover a
-{
-  color:#c60081;
-}
-.header .subNav .sub-incontainer ul li a
-{
-  line-height: 1.5em;
-  letter-spacing: -.025em;
-  color: #555;
-}
+
 .header .subNav .sub-incontainer ul:nth-child(4),.header .subNav .sub-incontainer ul:nth-child(5)
 {
   width:177.61px;

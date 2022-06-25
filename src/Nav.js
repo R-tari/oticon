@@ -4,12 +4,15 @@ import {Dum_Date,SubNav1,SubNav2,SubNav3,SubNav4,SubNav5 } from './data/data_nav
 function Nav() {
   const [subNav,setSubNav]= useState(false);
   const [mNav,setMNav]=useState(false)
+  const [mSubNav,setMSubNav]=useState(0);
+  const [clickCheck,setClickCheck]=useState(0);
   
   const navref=useRef();
 
   let mainNav=document.getElementsByClassName('main-nav');
   let subUl=document.getElementsByClassName('ul_active')
-  
+  let navli=document.getElementsByClassName('nav-li');
+
   const NavOn=()=> {
     if(window.innerWidth>1024)
     {
@@ -77,6 +80,70 @@ function Nav() {
 
   }
 
+  const MnavClick1=()=>
+  {
+    if(window.innerWidth<1025)
+    {
+      navli[0].addEventListener('click',()=>
+      {
+        navli[0].style="margin-bottom:351px"
+        setMSubNav(1);
+      })
+    }
+  }
+
+  const MnavClick12=()=>
+  {
+    if(window.innerWidth<1025)
+    {
+      navli[1].addEventListener('click',()=>
+      {
+        navli[1].style="margin-bottom:56.8px"
+        setMSubNav(2);
+      })
+    }
+  }
+
+
+  const MnavClick3=()=>
+  {
+    if(window.innerWidth<1025)
+    {
+      navli[2].addEventListener('click',()=>
+      {
+        navli[2].style="margin-bottom:167.2px"
+        setMSubNav(3)
+      })
+    }
+  }
+
+
+  const MnavClick4=()=>
+  {
+    if(window.innerWidth<1025)
+    {
+      navli[3].addEventListener('click',()=>
+      {
+        navli[3].style="margin-bottom:130.4px"
+        setMSubNav(4)
+        console.log(navli)
+      })
+    }
+  }
+
+
+  const MnavClick5=()=>
+  {
+    if(window.innerWidth<1025)
+    {
+      navli[4].addEventListener('click',()=>
+      {
+        setMSubNav(5)
+      })
+    }
+    }
+
+
 
   
 
@@ -103,7 +170,7 @@ function Nav() {
                         <span className='close' onClick={MNavOff}/>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} >
+                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick1}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           보청기제품
                         </a>
@@ -112,7 +179,7 @@ function Nav() {
                             {SubNav1.map(sub1=>
                               {
                                 return(
-                                <li>
+                                <li> 
                                   <a href={sub1.href}>
                                     {sub1.subnav}
                                   </a>
@@ -123,7 +190,7 @@ function Nav() {
                           </div>
                       </li>
                       
-                      <li style={{transtion:'0.3s'}} >
+                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick12}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           대리점
                         </a>
@@ -143,7 +210,7 @@ function Nav() {
                         </div>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} >
+                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick3}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           미디어센터
                         </a>
@@ -163,7 +230,7 @@ function Nav() {
                         </div>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} >
+                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick4}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           고객센터
                         </a>
@@ -183,7 +250,7 @@ function Nav() {
                         </div>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} >
+                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick5}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           회사소개
                         </a>
