@@ -84,7 +84,7 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-        if(mSubNav==!1)
+        if(mSubNav!=1)
         {
           setMSubNav(1);
         }
@@ -96,7 +96,7 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-        if(mSubNav ==! 2)
+        if(mSubNav != 2)
         {
           setMSubNav(2);
         }
@@ -109,7 +109,7 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-        if(mSubNav==!3)
+        if(mSubNav!=3)
         {
           setMSubNav(3)
         }
@@ -122,7 +122,7 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-        if(mSubNav==!4)
+        if(mSubNav!=4)
         {
           setMSubNav(4)
         }
@@ -135,7 +135,7 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-        if(mSubNav==!5)
+        if(mSubNav!=5)
         {
           setMSubNav(5)
         }
