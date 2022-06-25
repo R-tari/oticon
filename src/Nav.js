@@ -84,23 +84,23 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-      navli[0].addEventListener('click',()=>
-      {
-        navli[0].style="margin-bottom:351px"
-        setMSubNav(1);
-      })
+        if(mSubNav==!1)
+        {
+          setMSubNav(1);
+        }
+        else setMSubNav(0);
     }
   }
 
-  const MnavClick12=()=>
+  const MnavClick2=()=>
   {
     if(window.innerWidth<1025)
     {
-      navli[1].addEventListener('click',()=>
-      {
-        navli[1].style="margin-bottom:56.8px"
-        setMSubNav(2);
-      })
+        if(mSubNav ==! 2)
+        {
+          setMSubNav(2);
+        }
+        else setMSubNav(0);
     }
   }
 
@@ -109,11 +109,11 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-      navli[2].addEventListener('click',()=>
-      {
-        navli[2].style="margin-bottom:167.2px"
-        setMSubNav(3)
-      })
+        if(mSubNav==!3)
+        {
+          setMSubNav(3)
+        }
+        else setMSubNav(0);
     }
   }
 
@@ -122,12 +122,11 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-      navli[3].addEventListener('click',()=>
-      {
-        navli[3].style="margin-bottom:130.4px"
-        setMSubNav(4)
-        console.log(navli)
-      })
+        if(mSubNav==!4)
+        {
+          setMSubNav(4)
+        }
+        else setMSubNav(0);
     }
   }
 
@@ -136,12 +135,18 @@ function Nav() {
   {
     if(window.innerWidth<1025)
     {
-      navli[4].addEventListener('click',()=>
-      {
-        setMSubNav(5)
-      })
+        if(mSubNav==!5)
+        {
+          setMSubNav(5)
+        }
+        else setMSubNav(0);
     }
     }
+
+    useEffect(()=>
+    {
+      console.log(mSubNav)
+    },[mSubNav])
 
 
 
@@ -170,12 +175,12 @@ function Nav() {
                         <span className='close' onClick={MNavOff}/>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick1}>
+                      <li style={{transtion:'0.3s', marginBottom:mSubNav==1? '351px':'0'}} className="nav-li" onClick={MnavClick1}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           보청기제품
                         </a>
-                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
-                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                        <div className="sub-nav" style={{visibility:subNav || mSubNav==1? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav || mSubNav==1? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
                             {SubNav1.map(sub1=>
                               {
                                 return(
@@ -190,12 +195,12 @@ function Nav() {
                           </div>
                       </li>
                       
-                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick12}>
+                      <li style={{transtion:'0.3s',marginBottom:mSubNav==2? '56.8px':'0'}} className="nav-li" onClick={MnavClick2}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           대리점
                         </a>
-                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
-                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                        <div className="sub-nav" style={{visibility:subNav || mSubNav==2? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav || mSubNav==2? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
                             {SubNav2.map(sub2=>
                               {
                                 return(
@@ -210,12 +215,12 @@ function Nav() {
                         </div>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick3}>
+                      <li style={{transtion:'0.3s',marginBottom:mSubNav==3? '167.2px':'0'}} className="nav-li" onClick={MnavClick3}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           미디어센터
                         </a>
-                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
-                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                        <div className="sub-nav" style={{visibility:subNav || mSubNav==3? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav || mSubNav==3? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
                             {SubNav3.map(sub3=>
                               {
                                 return(
@@ -230,12 +235,12 @@ function Nav() {
                         </div>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick4}>
+                      <li style={{transtion:'0.3s',marginBottom:mSubNav==4? '130.4px':'0'}} className="nav-li" onClick={MnavClick4}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           고객센터
                         </a>
-                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
-                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                        <div className="sub-nav" style={{visibility:subNav ||mSubNav==4? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
+                          <ul className={subNav || mSubNav==4? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
                             {SubNav4.map(sub4=>
                               {
                                 return(
@@ -250,12 +255,12 @@ function Nav() {
                         </div>
                       </li>
 
-                      <li style={{transtion:'0.3s'}} className="nav-li" onClick={MnavClick5}>
+                      <li style={{transtion:'0.3s',marginBottom:mSubNav==5? '351px':'0'}} className="nav-li" onClick={MnavClick5}>
                         <a  href="#" onMouseEnter={NavOn} className="main-nav">
                           회사소개
                         </a>
-                        <div className="sub-nav" style={{visibility:subNav? 'visible':'hidden',pointerEvents:subNav? 'auto':'none' }}>
-                          <ul className={subNav? 'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
+                        <div className="sub-nav" style={{visibility:subNav || mSubNav==5? 'visible':'hidden',pointerEvents:subNav || mSubNav==5? 'auto':'none' }}>
+                          <ul className={subNav || mSubNav==5?  'ul_active':null} onMouseEnter={NavHover} onMouseLeave={NavOut}> 
                             {SubNav5.map(sub5=>
                               {
                                 return(
