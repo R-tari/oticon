@@ -147,14 +147,8 @@ function Nav() {
     {
       window.addEventListener('resize',()=>
       {
-        if(window.innerWidth<1290)
+        if(window.innerWidth<1025)
           setResolution(1)
-        
-        else if(window.innerWidth<1225)
-          setResolution(2)
-
-        else if(window.innerWidth<961)
-          setResolution(3)
 
         else 
           setResolution(0)
@@ -173,9 +167,9 @@ function Nav() {
       setMNav(false);
       setSubNav(false);
       setMSubNav(0)
-      console.log(mNav)
-      console.log(subNav)
-      console.log(mSubNav)
+      console.log('mNav'+' '+mNav)
+      console.log('subNav'+ +' '+subNav)
+      console.log('mSubnav'+' '+mSubNav)
     },[resolution])
 
 
