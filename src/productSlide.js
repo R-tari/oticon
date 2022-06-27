@@ -20,7 +20,7 @@ const ProductSlide=()=>
           <Swiper
               modules={[Navigation]}
               loop={true}
-              spaceBetween={10}
+              spaceBetween={13}
               slidesPerView={2}
              speed={500}
              navigation={{ // 네비게이션 적용, < >

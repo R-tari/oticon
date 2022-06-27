@@ -4,7 +4,7 @@ import { Slide_Btn } from './data/data_slide';
 import { Thumbs,Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/thumbs';
-import 'swiper/css/pagination'
+import 'swiper/css/pagination';
 
 
 
@@ -87,17 +87,13 @@ const Slide = () => {
            onActiveIndexChange={(swiper)=>
           {
             setControlled(swiper.realIndex);
-
-
           }}
 
            onTouchEnd={(swiper,e)=>
           {
-            
             console.log(controlled)
             console.log(swiper.realIndex)
             swiper.update();
-
             top.slideToLoop(controlled,500)
           }}
 
@@ -108,10 +104,13 @@ const Slide = () => {
               slidesPerView:3
             },
 
-            640:
+            330:
             {
               slidesPerView:1
             }
+
+           
+
           }}
 
            >
@@ -126,12 +125,9 @@ const Slide = () => {
                           </div>
                           </SwiperSlide>
                           )
-                      
               })}
-            
-            
             </Swiper> 
-            <div className="page" style={{width:'15%',right:'5px',top:'8px',left:'auto'}}></div>
+            <div className="page" style={{width:'18%',right:'5px',top:'8px',left:'auto'}}></div>
       </div>
             
     </div>
