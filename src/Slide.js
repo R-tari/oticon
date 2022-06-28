@@ -36,7 +36,6 @@ const Slide = () => {
         onUpdate={(swiper)=>
           {
             swiper.slideTo(3,500)
-            console.log('제발')
             setTop(swiper);
           }
         }
@@ -91,11 +90,11 @@ const Slide = () => {
 
            onTouchEnd={(swiper,e)=>
           {
-            console.log(controlled)
-            console.log(swiper.realIndex)
             swiper.update();
             top.slideToLoop(controlled,500)
           }}
+
+          observer={true}
 
           breakpoints=
           {{

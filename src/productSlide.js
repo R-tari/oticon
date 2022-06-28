@@ -36,7 +36,6 @@ const ProductSlide=()=>
              }}
              
              onTouchMove={(swiper,evevt)=>{
-                 console.log(swiper.touches.startX-swiper.touches.currentX)
                  if(Math.abs(swiper.touches.startX-swiper.touches.currentX)>200)
                  {
                      swiper.allowTouchMove=false;

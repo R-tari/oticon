@@ -23,7 +23,6 @@ function Nav() {
       setMNav(true);
     }
     
-    console.log(subNav, 'Nav.js')
   }
 
   const NavOff=()=> {
@@ -44,39 +43,34 @@ function Nav() {
   }
   const NavHover=()=>
   {
-   subUl[0].addEventListener('mouseover',()=>
+    if(window.innerWidth>1024)
     {
-      mainNav[0].style="color:#c60081"
-      console.log(mainNav[0])
-    })
-
-    subUl[1].addEventListener('mouseover',()=>
-    {
-     
-      mainNav[1].style="color:#c60081"
-      console.log(mainNav[1])
-    })
-
-    subUl[2].addEventListener('mouseover',()=>
-    {
-     
-      mainNav[2].style="color:#c60081"
-      console.log(mainNav[2])
-    })
-
-    subUl[3].addEventListener('mouseover',()=>
-    {
-     
-      mainNav[3].style="color:#c60081"
-      console.log(mainNav[3])
-    })
-
-    subUl[4].addEventListener('mouseover',()=>
-    {
-      
-      mainNav[4].style="color:#c60081"
-      console.log(mainNav[4])
-    })
+      subUl[0].addEventListener('mouseover',()=>
+       {
+         if(window.innerWidth>1024)
+         mainNav[0].style="color:#c60081"
+       })
+   
+       subUl[1].addEventListener('mouseover',()=>
+       {
+         mainNav[1].style="color:#c60081"
+       })
+   
+       subUl[2].addEventListener('mouseover',()=>
+       {
+         mainNav[2].style="color:#c60081"
+       })
+   
+       subUl[3].addEventListener('mouseover',()=>
+       {
+         mainNav[3].style="color:#c60081"
+       })
+   
+       subUl[4].addEventListener('mouseover',()=>
+       {
+         mainNav[4].style="color:#c60081"
+       })
+    }
 
   }
 
@@ -167,9 +161,6 @@ function Nav() {
       setMNav(false);
       setSubNav(false);
       setMSubNav(0)
-      console.log('mNav'+' '+mNav)
-      console.log('subNav'+ +' '+subNav)
-      console.log('mSubnav'+' '+mSubNav)
     },[resolution])
 
 

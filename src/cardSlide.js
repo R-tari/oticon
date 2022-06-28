@@ -63,7 +63,6 @@ const CardSlide=()=>{
                 }}
                 
                 onTouchMove={(swiper,evevt)=>{
-                    console.log(swiper.touches.startX-swiper.touches.currentX)
                     if(Math.abs(swiper.touches.startX-swiper.touches.currentX)>220)
                     {
                         swiper.allowTouchMove=false;
